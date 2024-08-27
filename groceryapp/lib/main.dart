@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:groceryapp/features/domain/entities/grocery_entity.dart';
 import 'package:groceryapp/features/presentation/bloc/grocery_bloc.dart';
 import 'package:groceryapp/features/presentation/pages/details_page.dart';
+import 'package:groceryapp/features/presentation/pages/home_page.dart';
 import 'package:groceryapp/features/presentation/pages/splash_screen.dart';
 
 import 'injection_container.dart' as di;
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
           switch (settings.name) {
             case '/':
               return _createRoute(const SplashScreen());
+
+            case '/home':
+              return _createRoute(HomePage());
 
             case '/detail':
               final args = settings.arguments as Grocery;

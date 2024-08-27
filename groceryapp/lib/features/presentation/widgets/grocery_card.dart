@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
 import 'package:groceryapp/features/presentation/pages/details_page.dart';
 
 class GroceryCard extends StatelessWidget {
@@ -9,16 +7,16 @@ class GroceryCard extends StatelessWidget {
   final num rating;
   final num oldPrice;
   final num newPrice;
-  final String discription;
+  final String description;
 
   const GroceryCard({
-    super.key,
+    Key? key,
     required this.imageUrl,
     required this.foodName,
     required this.rating,
     required this.oldPrice,
     required this.newPrice,
-    required this.discription,
+    required this.description,
   });
 
   @override
@@ -35,8 +33,7 @@ class GroceryCard extends StatelessWidget {
               rating: rating,
               oldPrice: oldPrice,
               newPrice: newPrice,
-              description: discription,
-              // Add a description
+              description: description,
             ),
           ),
         );
@@ -63,8 +60,9 @@ class GroceryCard extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.network(
-                    imageUrl,
+                  child: FadeInImage.assetNetwork(
+                    placeholder: 'assets/loading.gif', // Placeholder image
+                    image: imageUrl,
                     height: 120,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -118,15 +116,16 @@ class GroceryCard extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text(
-                        '\$$oldPrice',
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey,
-                          decoration: TextDecoration.lineThrough,
+                      if (oldPrice != newPrice)
+                        Text(
+                          '\$$oldPrice',
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                            decoration: TextDecoration.lineThrough,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 8),
+                      if (oldPrice != newPrice) const SizedBox(width: 8),
                       Text(
                         '\$$newPrice',
                         style: const TextStyle(
