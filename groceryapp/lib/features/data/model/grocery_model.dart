@@ -1,4 +1,6 @@
+import 'package:groceryapp/features/data/model/optionModel.dart';
 import 'package:groceryapp/features/domain/entities/grocery_entity.dart';
+import 'package:groceryapp/features/domain/entities/options_entity.dart';
 
 class GroceryModel extends Grocery {
   GroceryModel({
@@ -22,7 +24,9 @@ class GroceryModel extends Grocery {
         price: json['price'],
         discount: json['discount'],
         description: json['description'],
-        options: json['options'],
+        options: (json['options'] as List)
+            .map((option) => OptionModel.fromJson(option))
+            .toList(),
       );
     } catch (e) {
       throw Exception('Error parsing JSON (GroceryModel.fromJson)$e ');
@@ -38,7 +42,7 @@ class GroceryModel extends Grocery {
       'price': price,
       'discount': discount,
       'description': description,
-      'options': options,
+      'options': options
     };
   }
 

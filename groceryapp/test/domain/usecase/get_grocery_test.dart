@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:groceryapp/core/failure/failure.dart';
 import 'package:groceryapp/features/domain/entities/grocery_entity.dart';
 import 'package:groceryapp/features/domain/entities/options_entity.dart';
 import 'package:groceryapp/features/domain/usecases/get_grocry_by_id_usecase.dart';
@@ -39,12 +40,25 @@ void main() {
         .thenAnswer((_) async => Right(testGroceryDetails));
 
     // act
-    final result = await getGroceryByIdUsecase.call(GetParams(id: testGroceryId));
+    final result =
+        await getGroceryByIdUsecase.call(GetParams(id: testGroceryId));
 
     // assert
     expect(result, Right(testGroceryDetails));
     verify(mockGroceryRepository.getGrocery(testGroceryId));
     verifyNoMoreInteractions(mockGroceryRepository);
-    
+  });
+
+  test('should return a failure when Grocery Fetching fails', () async {
+    // arrange
+    when(mockGroceryRepository.getGrocery(testGroceryId)).thenAnswer(
+        (_) async => Left(ServerFailure(message: 'Server Failure')));
+
+    // act
+    final result =
+        await getGroceryByIdUsecase.call(GetParams(id: testGroceryId));
+
+    // assert
+    expect(result, Left(ServerFailure(message: 'Server Failure')));
   });
 }

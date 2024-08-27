@@ -6,9 +6,9 @@ class Grocery extends Equatable {
   final String id;
   final String title;
   final String imageUrl;
-  final double rating;
-  final double price;
-  final double discount;
+  final num rating;
+  final num price;
+  final num discount;
   final String description;
   final List<OptionEntity> options;
 

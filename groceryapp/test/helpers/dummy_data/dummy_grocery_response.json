@@ -1,0 +1,49 @@
+[
+    {
+        "id": "3",
+        "title": "Chicken Burger",
+        "imageUrl": "imageurl",
+        "rating": 4.9,
+        "price": 11,
+        "discount": 6,
+        "description": "A delicious chicken burger served on a toasted bun with fresh lettuce.",
+        "options": [
+            {
+                "id": "o1",
+                "name": "Add Cheese",
+                "price": 0.5
+            },
+            {
+                "id": "o2",
+                "name": "Add Bacon",
+                "price": 1
+            },
+            {
+                "id": "o3",
+                "name": "Add Meat",
+                "price": 0
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "title": "Beef Burger",
+        "imageUrl": "imageurl",
+        "rating": 4.9,
+        "price": 12,
+        "discount": 10,
+        "description": "A delicious beef burger served on a toasted bun with fresh lettuce, tomato slices, and mayonnaise.",
+        "options": [
+            {
+                "id": "o4",
+                "name": "Add Cheese",
+                "price": 0.5
+            },
+            {
+                "id": "05",
+                "name": "Add Bacon",
+                "price": 1
+            }
+        ]
+    }
+]

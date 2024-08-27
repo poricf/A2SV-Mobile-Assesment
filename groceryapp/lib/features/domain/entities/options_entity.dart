@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 class OptionEntity extends Equatable{
   final String id;
   final String name;
-  final double price;
+  final num price;
 
   OptionEntity({
     required this.id,
