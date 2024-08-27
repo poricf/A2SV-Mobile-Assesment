@@ -41,6 +41,11 @@ dependencies:
   flutter_bloc: ^8.1.6
   equatable: ^2.0.5
   dartz: ^0.10.1
+  http: ^1.2.2
+  mockito: ^5.4.4
+  shared_preferences: ^2.3.2
+  build_runner: ^2.4.12
+  internet_connection_checker: ^2.0.0
 
 dev_dependencies:
   flutter_test:

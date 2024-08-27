@@ -20,7 +20,7 @@ void main() {
         GetGroceriesUseCase(groceryRepository: mockGroceryRepository);
   });
 
-  final testProductDetails = [
+  final testGroceryDetails = [
     Grocery(
       id: '1',
       title: 'Chicken Burger',
@@ -41,11 +41,11 @@ void main() {
   test('should get all Grocery from the repository', () async {
     // arrange
     when(mockGroceryRepository.getGroceries())
-        .thenAnswer((_) async => Right(testProductDetails));
+        .thenAnswer((_) async => Right(testGroceryDetails));
     // act
     final result = await getGroceriesUseCase.call(NoParams());
     // assert
-    expect(result, Right(testProductDetails));
+    expect(result, Right(testGroceryDetails));
     verify(mockGroceryRepository.getGroceries());
     verifyNoMoreInteractions(mockGroceryRepository);
   });
