@@ -40,6 +40,9 @@ class MyApp extends StatelessWidget {
 
             case '/home':
               return _createRoute(HomePage());
+            
+            case '/Basket':
+              return _createRoute(BasketPage());
 
             case '/detail':
               final args = settings.arguments as Grocery;

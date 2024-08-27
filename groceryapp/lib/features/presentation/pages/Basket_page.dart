@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: CartPage(),
-    ),
-  );
-}
-
-class CartPage extends StatelessWidget {
+class BasketPage extends StatelessWidget {
   final List<CartItem> cartItems = [
     CartItem(
       imageUrl: 'assets/welcome.png',
