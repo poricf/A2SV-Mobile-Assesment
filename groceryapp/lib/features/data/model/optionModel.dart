@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:groceryapp/features/domain/entities/options_entity.dart';
 
-
 class OptionModel extends OptionEntity {
   OptionModel({
     required String id,

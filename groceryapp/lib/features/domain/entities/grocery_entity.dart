@@ -12,6 +12,8 @@ class Grocery extends Equatable {
   final String description;
   final List<OptionEntity> options;
 
+  var foodName;
+
   Grocery({
     required this.id,
     required this.title,
