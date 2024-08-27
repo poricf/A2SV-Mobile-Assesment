@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:groceryapp/features/domain/entities/grocery_entity.dart';
 import 'package:groceryapp/features/presentation/bloc/grocery_bloc.dart';
+import 'package:groceryapp/features/presentation/pages/Basket_page.dart';
 import 'package:groceryapp/features/presentation/pages/details_page.dart';
 import 'package:groceryapp/features/presentation/pages/home_page.dart';
 import 'package:groceryapp/features/presentation/pages/splash_screen.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
 
             case '/home':
               return _createRoute(HomePage());
-            
+
             case '/Basket':
               return _createRoute(BasketPage());
 
